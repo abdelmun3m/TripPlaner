@@ -40,6 +40,16 @@ public final class DBSingleTon {
             return DBreference.child(TRIP_KEY);
         }
 
+
+        public static String addTrip(Object trip){
+            
+            String id = GET_ROOT_DATABASE_REFERENCE().push().getKey();
+            GET_ROOT_DATABASE_REFERENCE().push().setValue(trip);
+
+            return id;
+        }
+
+
 //    public MainActivity.test getObstacle(){
 //
 //        ValueEventListener ObstacleListener = new ValueEventListener() {
@@ -58,6 +68,6 @@ public final class DBSingleTon {
 //    }
 
 
-    // to add record                 tripReference.push().setValue(new test());
+    // to add record
 
 }
