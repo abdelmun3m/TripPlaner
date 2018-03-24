@@ -15,5 +15,47 @@ tools:context="com.android.abdelmun3m.tripplaner.MainActivity">
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/start"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/end_point"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="95dp" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="168dp" />
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:text="@string/clock"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="317dp" />
 
 </android.support.constraint.ConstraintLayou>
