@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TripPlaner</string>
+    <string name="_13_3_inch_256_gb">13.3 Inch, 256 GB</string>
+    <string name="str_tripstatus">status</string>
+    <string name="str_tripName">Name</string>
+    <string name="str_strpoint">startPOint</string>
+    <string name="str_endpoint">endPoint</string>
+    <string name="str_dateTime">dateTIme</string>
+    <string name="str_direction">direction</string>
 </resources>
