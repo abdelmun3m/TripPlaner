@@ -42,7 +42,7 @@ public final class DBSingleTon {
 
 
         public static String addTrip(Object trip){
-            
+
             String id = GET_ROOT_DATABASE_REFERENCE().push().getKey();
             GET_ROOT_DATABASE_REFERENCE().push().setValue(trip);
 
