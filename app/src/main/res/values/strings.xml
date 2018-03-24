@@ -13,4 +13,8 @@
 <string name="silent_mode_activated">Silent mode activated</string>
 <string name="touch_to_relaunch">Touch to launch the app.</string>
 <string name="back_to_normal">Back to normal</string>
+<string name="Get">get_place</string>
+ <string name="get_place">Get Place</string>
+ <string name="google_place_api">AIzaSyABtWpBSEvUxeE5I3VSBFmPTJnPBC1R0To</string>
+
 </resources>

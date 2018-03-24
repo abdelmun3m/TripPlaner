@@ -1,5 +1,6 @@
 package com.android.abdelmun3m.tripplaner;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.NotificationManager;
@@ -19,6 +20,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.abdelmun3m.tripplaner.R;
@@ -244,6 +246,72 @@ public class MainActivity extends AppCompatActivity implements
                 new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                 PERMISSIONS_REQUEST_FINE_LOCATION);
     }
+    public class MainActivity extends AppCompatActivity {
 
+        private TextView get_place;
+        int PLACE_PICKER_REQUEST = 1;
 
-}
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            get_place = (TextView) findViewById(R.id.text);
+            get_place.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+                    Intent intent = null;
+                    try {
+                        intent = builder.build((Activity) getApplicationContext());
+                    } catch (GooglePlayServicesRepairableException e) {
+                        e.printStackTrace();
+                    } catch (GooglePlayServicesNotAvailableException e) {
+                        e.printStackTrace();
+                    }
+                    startActivityForResult(intent, PLACE_PICKER_REQUEST);
+
+                }
+            });
+
+        }
+
+        public class MainActivity extends AppCompatActivity {
+
+            private TextView get_place;
+            int PLACE_PICKER_REQUEST = 1;
+
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_main);
+                get_place = (TextView) findViewById(R.id.text);
+                get_place.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+                        Intent intent = null;
+                        try {
+                            intent = builder.build((Activity) getApplicationContext());
+                        } catch (GooglePlayServicesRepairableException e) {
+                            e.printStackTrace();
+                        } catch (GooglePlayServicesNotAvailableException e) {
+                            e.printStackTrace();
+                        }
+                        startActivityForResult(intent, PLACE_PICKER_REQUEST);
+
+                    }
+                });
+
+            }
+
+            protected void onActivtyResult(int requestCode, int resultCode, Intent data) {
+                if (requestCode == PLACE_PICKER_REQUEST) if (resultCode == RESULT_OK) {
+                    Place place = PlacePicker.getPlace(data, this);
+                    String address = String.format("place:%s", place.getAddress());
+                    get_place.setText(address);
+                }
+            }
+        }
+    }
