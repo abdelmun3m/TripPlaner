@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">TripPlaner</string>
+    <string name="Add_trip">Add your trip here</string>
+    <string name="startPoint">Start Point :</string>
+    <string name="addStartPoint">Add Start Point</string>
+    <string name="endPoint">End Point :</string>
+    <string name="addEndPoint">Add your End Point</string>
+    <string name="tripDate">Ttip Date :</string>
+    <string name="tripTime">Trip Time :</string>
+    <string name="addNotes">Add your notes</string>
+    <string name="tripType">Trip Type:</string>
+    <string name="oneDirection">oneDirection</string>
+    <string name="roundTrip">RoundTrip</string>
+    <string name="addTripBtn">Add Trip</string>
+    <string name="readTripBtn">Get Trip Data</string>
 </resources>

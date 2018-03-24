@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.abdelmun3m.tripplaner.secondActivity">
+
+
+
+    <TextView
+        android:id="@+id/tripName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/triptxt"
+        android:layout_marginTop="30dp"
+        android:text="Trip Name : " />
+
+    <EditText
+        android:id="@+id/nameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tripName"
+        android:layout_marginStart="54dp"
+        android:layout_toEndOf="@+id/tripName"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/startPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameTxt"
+        android:layout_marginTop="34dp"
+        android:layout_toStartOf="@+id/nameTxt"
+        android:text="@string/startPoint" />
+
+    <EditText
+        android:id="@+id/startTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/startPoint"
+        android:layout_alignBottom="@+id/startPoint"
+        android:layout_alignEnd="@+id/nameTxt"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/endPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/endTxt"
+        android:layout_alignParentStart="true"
+        android:text="@string/endPoint" />
+
+    <EditText
+        android:id="@+id/endTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/startTxt"
+        android:layout_below="@+id/startTxt"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/addNotesTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/startPoint"
+        android:layout_below="@+id/endPoint"
+        android:layout_marginTop="30dp"
+        android:text="@string/addNotes" />
+
+    <EditText
+        android:id="@+id/notesTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addNotesTxt"
+        android:layout_alignBottom="@+id/addNotesTxt"
+        android:layout_alignStart="@+id/endTxt"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/addTripBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/notesTxt"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="79dp"
+        android:layout_marginEnd="13dp"
+        android:text="@string/addTripBtn" />
+
+    <Button
+        android:id="@+id/readTripBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addTripBtn"
+        android:layout_alignBottom="@+id/addTripBtn"
+        android:layout_toEndOf="@+id/tripName"
+        android:text="@string/readTripBtn" /> /
+
+
+
+
+
+</RelativeLayout>
