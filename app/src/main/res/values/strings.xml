@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TripPlaner</string>
+    <string name="Name">Name</string>
+    <string name="NameText">NameText</string>
+    <string name="Start">Start</string>
+    <string name="End">End</string>
+    <string name="CommentText">CommentText</string>
+    <string name="Comment">Comment</string>
+    <string name="Add">Add</string>
+    <string name="DateText">DateText</string>
+    <string name="TowTripDirection">Tow Trip Direction</string>
+    <string name="OneTripDirection">One Trip Direction</string>
 </resources>
