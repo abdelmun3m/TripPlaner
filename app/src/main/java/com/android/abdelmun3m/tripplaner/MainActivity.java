@@ -1,14 +1,17 @@
 package com.android.abdelmun3m.tripplaner;
 
-import android.support.v7.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
-                String placeName=place.getName().toString();
-                Toast.makeText(MainActivity.this, ""+placeName, Toast.LENGTH_SHORT).show();
+                String placeName = place.getName().toString();
+                Toast.makeText(MainActivity.this, "" + placeName, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -40,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
-                String placeName=place.getName().toString();
-                Toast.makeText(MainActivity.this, ""+placeName, Toast.LENGTH_SHORT).show();
+                String placeName = place.getName().toString();
+                Toast.makeText(MainActivity.this, "" + placeName, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -49,7 +52,5 @@ public class MainActivity extends AppCompatActivity {
                 // TODO: Handle the error.
             }
         });
-
-
     }
-}
+    }
