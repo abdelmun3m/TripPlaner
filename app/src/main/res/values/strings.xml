@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">TripPlaner</string>
+
     <string name="Add_trip">Add your trip here</string>
     <string name="startPoint">Start Point :</string>
     <string name="addStartPoint">Add Start Point</string>
@@ -13,4 +14,14 @@
     <string name="roundTrip">RoundTrip</string>
     <string name="addTripBtn">Add Trip</string>
     <string name="readTripBtn">Get Trip Data</string>
+    <string name="Name">Name</string>
+    <string name="NameText">NameText</string>
+    <string name="Start">Start</string>
+    <string name="End">End</string>
+    <string name="CommentText">CommentText</string>
+    <string name="Comment">Comment</string>
+    <string name="Add">Add</string>
+    <string name="DateText">DateText</string>
+    <string name="TowTripDirection">Tow Trip Direction</string>
+    <string name="OneTripDirection">One Trip Direction</string>
 </resources>
