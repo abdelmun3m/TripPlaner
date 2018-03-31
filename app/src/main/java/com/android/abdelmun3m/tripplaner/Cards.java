@@ -1,19 +1,23 @@
 package com.android.abdelmun3m.tripplaner;
 
+import java.io.Serializable;
+
 /**
  * Created by lamiaa on 23/03/18.
  */
 
-public class Cards {
-   private int id;
+public class Cards implements Serializable {
+    private int id;
     private String tripName;
-    private double srtpoint;
-    private double endpoint;
+//    private double srtpoint;
+//    private double endpoint;
+    private String srtpoint;
+    private String endpoint;
     private String dateTime;
     private String tripstatus;
     private String rootStatus;
 
-    public Cards(int id ,String tripName, double srtpoint, double endpoint, String dateTime, String tripstatus, String rootStatus) {
+    public Cards(int id ,String tripName, String srtpoint, String endpoint, String dateTime, String tripstatus, String rootStatus) {
         this.id=id;
         this.tripName = tripName;
         this.srtpoint = srtpoint;
@@ -31,11 +35,11 @@ public class Cards {
         return tripName;
     }
 
-    public double getSrtpoint() {
+    public String getSrtpoint() {
         return srtpoint;
     }
 
-    public double getEndpoint() {
+    public String getEndpoint() {
         return endpoint;
     }
 
@@ -59,11 +63,11 @@ public class Cards {
         this.tripName = tripName;
     }
 
-    public void setSrtpoint(double srtpoint) {
+    public void setSrtpoint(String srtpoint) {
         this.srtpoint = srtpoint;
     }
 
-    public void setEndpoint(double endpoint) {
+    public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
 
