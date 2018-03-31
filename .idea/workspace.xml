@@ -20,23 +20,7 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f235eb1-d490-4ba7-ade2-d9e272a04e35" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/Cards.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/Cards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/CardsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/CardsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-    </list>
+    <list default="true" id="3f235eb1-d490-4ba7-ade2-d9e272a04e35" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +72,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="322">
+              <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,8 +110,8 @@
       <file leaf-file-name="CardsAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/CardsAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+            <state relative-caret-position="-268">
+              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1498#2316#0" expanded="true" />
@@ -2008,7 +1992,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1522507132774" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1522508896147" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2056,7 +2040,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1522507132774" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1522508896147" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2218,7 +2202,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1522507132777" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1522508896151" />
       </method>
     </configuration>
     <list size="1">
@@ -2653,8 +2637,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="322">
+          <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2663,8 +2647,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/abdelmun3m/tripplaner/CardsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+        <state relative-caret-position="-268">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1498#2316#0" expanded="true" />
