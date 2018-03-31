@@ -2,19 +2,17 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ScrollView01"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true"
     android:orientation="vertical"
     >
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:id="@+id/contaner"
-        android:layout_width="380dp"
-        android:layout_height="250dp"
-        android:orientation="vertical"
-        tools:context="com.android.abdelmun3m.tripplaner.MainActivity">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/NameTextView"
@@ -78,12 +76,22 @@
 
         <DatePicker
             android:id="@+id/tripDatePicker"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
             android:endYear="2100"
             android:startYear="1900">
 
         </DatePicker>
+
+        <TimePicker
+            android:id="@+id/tripTimePicker"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:endYear="2100"
+            android:startYear="1900">
+
+        </TimePicker>
+
 
         <CheckBox
             android:id="@+id/OneDirection"
@@ -122,8 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:onClick="sendTripInfo"
-            android:text="@string/Add"
-            tools:ignore="OnClick">
+            android:text="@string/Add">
         </Button>
 
     </LinearLayout>

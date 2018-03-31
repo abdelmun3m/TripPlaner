@@ -50,7 +50,7 @@ public final class DBSingleTon {
         }
 
 
-//    public MainActivity.test getObstacle(){
+//    public AddTripActivity.test getObstacle(){
 //
 //        ValueEventListener ObstacleListener = new ValueEventListener() {
 //            @Override

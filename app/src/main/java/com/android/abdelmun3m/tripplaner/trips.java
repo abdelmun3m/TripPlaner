@@ -16,20 +16,21 @@ public class trips {
     String startPlace;
     String endPlace;
     String tripDate;
-   // Time tripTime;
+    String tripTime;
     String tripNotes;
     Boolean roundTrip;
 
 
 
     public trips(String tripName, String startPlace, String endPlace,
-                 String tripDate, String tripNotes, Boolean roundTrip) {
+                 String tripDate, String tripTime , String tripNotes, Boolean roundTrip) {
         this.tripName = tripName;
         this.startPlace = startPlace;
         this.endPlace = endPlace;
         this.tripDate = tripDate;
         this.tripNotes = tripNotes;
         this.roundTrip = roundTrip;
+        this.tripTime = tripTime;
     }
 
     public String getTripName() {
@@ -83,5 +84,14 @@ public class trips {
     @Override
     public String toString() {
         return tripName;
+    }
+
+
+    public String getTripTime() {
+        return tripTime;
+    }
+
+    public void setTripTime(String tripTime) {
+        this.tripTime = tripTime;
     }
 }
