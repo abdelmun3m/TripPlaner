@@ -19,8 +19,12 @@ public class trips {
     String tripTime;
     String tripNotes;
     Boolean roundTrip;
+    String tripStatus = "upcoming";
+    private String rootStatus = "root";
 
+    public trips(){
 
+    }
 
     public trips(String tripName, String startPlace, String endPlace,
                  String tripDate, String tripTime , String tripNotes, Boolean roundTrip) {
@@ -93,5 +97,21 @@ public class trips {
 
     public void setTripTime(String tripTime) {
         this.tripTime = tripTime;
+    }
+
+    public String getTripStatus() {
+        return tripStatus;
+    }
+
+    public void setTripStatus(String tripStatus) {
+        this.tripStatus = tripStatus;
+    }
+
+    public String getRootStatus() {
+        return rootStatus;
+    }
+
+    public void setRootStatus(String rootStatus) {
+        this.rootStatus = rootStatus;
     }
 }
