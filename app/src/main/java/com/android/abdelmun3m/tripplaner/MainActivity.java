@@ -13,8 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -32,37 +34,20 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(DBSingleTon.GET_LOGGED_USER(this) == null){
+            finish();
+        }
+
         setContentView(R.layout.activity_main);
-
-
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-//        cardsList.add(
-//                new Cards(1,
-//                        "My Trip",
-//                        "Gachibowli",
-//                        "kothaguda",
-//                        "10-3-2018",
-//                        "done",
-//                        "one direction"
-//                ));
-//        cardsList.add(
-//                new Cards(2,
-//                        "My Trip",
-//                        "12.972442,77.580643",
-//                        "12.9103,77.645",
-//                        "10-3-2018",
-//                        "done",
-//                        "one direction"
-//                ));
-
-         cardsAdapter = new CardsAdapter(MainActivity.this,cardsList);
+        cardsAdapter = new CardsAdapter(MainActivity.this,cardsList);
         recyclerView.setAdapter(cardsAdapter);
 
     }
+
 
 
     @Override

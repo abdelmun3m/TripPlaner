@@ -2,6 +2,11 @@ package com.android.abdelmun3m.tripplaner; /**
  * Created by abdelmun3m on 23/03/18.
  */
 
+import android.content.Context;
+import android.content.Intent;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -13,9 +18,9 @@ public final class DBSingleTon {
         private static FirebaseDatabase DBinsatnce;
         private static DatabaseReference DBreference;
         private static ValueEventListener ValueListener;
-        //public FirebaseAuth myAuth;
-        //public FirebaseAuth.AuthStateListener myAuthListener;
-        //public FirebaseUser User ;
+        public FirebaseAuth myAuth;
+        public FirebaseAuth.AuthStateListener myAuthListener;
+        public FirebaseUser User ;
 
         private  DBSingleTon(){
             //DBinsatnce = FirebaseDatabase.getInstance(); // get an instance from the database .
@@ -38,32 +43,18 @@ public final class DBSingleTon {
 
 
         public static String addTrip(Object trip){
-
             String id = GET_TRIP_REFERENCE().push().getKey();
             GET_TRIP_REFERENCE().push().setValue(trip);
-
             return id;
         }
 
-
-//    public AddTripActivity.test getObstacle(){
-//
-//        ValueEventListener ObstacleListener = new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        };
-//
-//        tripReference.addValueEventListener(ObstacleListener);
-//        return  null;
-//    }
-
-
-    // to add record
+        public static FirebaseUser GET_LOGGED_USER(Context context){
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if(user == null){
+                Intent i = new Intent(context,LoginActivty.class);
+                context.startActivity(i);
+            }
+            return user;
+        }
 
 }

@@ -79,23 +79,34 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:endYear="2100"
-            android:startYear="1900">
+            android:startYear="1900"
+            android:visibility="gone">
 
         </DatePicker>
 
-        <TimePicker
-            android:id="@+id/tripTimePicker"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:endYear="2100"
-            android:startYear="1900">
+        <!--<TimePicker-->
+            <!--android:id="@+id/tripTimePicker"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:endYear="2100"-->
+            <!--android:startYear="1900"-->
+            <!--android:visibility="gone"-->
+            <!--&gt;-->
 
-        </TimePicker>
+        <!--</TimePicker>-->
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/btn_date"
+            android:text="date"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_time"
+            android:text="Time"
             />
         <CheckBox
             android:id="@+id/OneDirection"
