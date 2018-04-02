@@ -39,8 +39,8 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
 
         final trips card = CardsList.get(position);
         holder.tripName.setText(card.getTripName());
-        holder.tripstrPoint.setText(String.valueOf(card.getStartPlace()));
-        holder.tripendPoint.setText(String.valueOf(card.getEndPlace()));
+        holder.tripstrPoint.setText(card.getStartPlace().sName);
+        holder.tripendPoint.setText(card.getEndPlace().sName);
         holder.tripDateTime.setText(card.getTripDate());
         holder.tripStatus.setText(card.getTripStatus());
         holder.tripDirStatus.setText(card.getRootStatus());
@@ -50,19 +50,22 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
         holder.startTripBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                String srtpoint = String.valueOf(card.getStartPlace());
-                String endpoint = String.valueOf(card.getEndPlace());
-
+               //String srtpoint = card.getStartPlace().sName;
+              //  String endpoint = card.getEndPlace().sName();
                 String ur="";
-                final String uri = "http://maps.google.com/maps?daddr=";
-                ur= uri.concat(srtpoint + "+to:"+endpoint);
+                Toast.makeText(myCtx, card.getStartPlace().latitude+","+card.getStartPlace().longitude +"&" +card.getEndPlace().latitude+","+card.getEndPlace().longitude , Toast.LENGTH_LONG).show();
+                final String uri = "https://www.google.com/maps/dir/?api=1&map_action=pano&origin=";
+                ur= uri.concat(
+                        card.getStartPlace().latitude+"%2C"+card.getStartPlace().longitude+
+                                "&destination="+
+                                card.getEndPlace().latitude+"%2C"+card.getEndPlace().longitude
+                );
                 final Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(ur));
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                intent.setClassName("com.google.android.apps.maps",
+                        "com.google.android.maps.MapsActivity");
                 myCtx.startActivity(intent);
-
-                Toast.makeText(myCtx, ""+ur, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(myCtx, ""+ur, Toast.LENGTH_SHORT).show();
 
             }
         });

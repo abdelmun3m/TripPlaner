@@ -69,19 +69,16 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
 
-        DBSingleTon.GET_ROOT_DATABASE_REFERENCE().addValueEventListener(new ValueEventListener() {
+        DBSingleTon.GET_TRIP_REFERENCE().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 cardsList = new ArrayList<>();
                 Log.i("temp",dataSnapshot.toString());
                 Toast.makeText(MainActivity.this, ""+dataSnapshot.getChildrenCount(), Toast.LENGTH_SHORT).show();
-//                while(dataSnapshot.getChildren().iterator().next()!= null){
-//                    trips temp = dataSnapshot.getValue(trips.class);
-//                    cardsList.add(temp);
-//                    Log.i("temp","1");
-//                }
+
                 for(DataSnapshot ds: dataSnapshot.getChildren()) {
                     cardsList.add(ds.getValue(trips.class));
+                    Log.i("test1",ds.getValue(trips.class).getStartPlace().latitude+"");
                 }
                 cardsAdapter.updateCArdList(cardsList);
             }

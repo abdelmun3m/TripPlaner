@@ -92,7 +92,11 @@
 
         </TimePicker>
 
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_date"
+            />
         <CheckBox
             android:id="@+id/OneDirection"
             android:layout_width="30dp"

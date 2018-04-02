@@ -1,10 +1,17 @@
 package com.android.abdelmun3m.tripplaner;
 
+import android.net.Uri;
 import android.text.format.Time;
+import android.util.Log;
 
+import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Asmaa on 3/28/2018.
@@ -13,8 +20,8 @@ import java.util.Date;
 public class trips {
 
     String tripName;
-    String startPlace;
-    String endPlace;
+    CustomPlace startPlace;
+    CustomPlace endPlace;
     String tripDate;
     String tripTime;
     String tripNotes;
@@ -26,11 +33,22 @@ public class trips {
 
     }
 
-    public trips(String tripName, String startPlace, String endPlace,
-                 String tripDate, String tripTime , String tripNotes, Boolean roundTrip) {
+    public trips(String tripName, Place startPlace, Place endPlace,
+                 String tripDate, String tripTime , String tripNotes, Boolean roundTrip){
         this.tripName = tripName;
-        this.startPlace = startPlace;
-        this.endPlace = endPlace;
+        this.startPlace = new CustomPlace(
+                startPlace.getId(),
+                startPlace.getLatLng().latitude,
+                startPlace.getLatLng().longitude,
+                startPlace.getName().toString());
+
+        this.endPlace = new CustomPlace(endPlace.getId(),
+                endPlace.getLatLng().latitude,
+                startPlace.getLatLng().longitude,
+                endPlace.getName().toString());
+
+        Log.i("test1",startPlace.getLatLng().latitude+"");
+
         this.tripDate = tripDate;
         this.tripNotes = tripNotes;
         this.roundTrip = roundTrip;
@@ -45,19 +63,19 @@ public class trips {
         this.tripName = tripName;
     }
 
-    public String getStartPlace() {
+    public CustomPlace getStartPlace() {
         return startPlace;
     }
 
-    public void setStartPlace(String startPlace) {
+    public void setStartPlace(CustomPlace startPlace) {
         this.startPlace = startPlace;
     }
 
-    public String getEndPlace() {
+    public CustomPlace getEndPlace() {
         return endPlace;
     }
 
-    public void setEndPlace(String endPlace) {
+    public void setEndPlace(CustomPlace endPlace) {
         this.endPlace = endPlace;
     }
 

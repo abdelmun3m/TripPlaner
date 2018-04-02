@@ -33,18 +33,14 @@ public final class DBSingleTon {
         }
 
         public static DatabaseReference GET_TRIP_REFERENCE(){
-
-            if(DBreference == null){
-                GET_ROOT_DATABASE_REFERENCE();
-            }
-            return DBreference.child(TRIP_KEY);
+            return GET_ROOT_DATABASE_REFERENCE().child(TRIP_KEY);
         }
 
 
         public static String addTrip(Object trip){
 
-            String id = GET_ROOT_DATABASE_REFERENCE().push().getKey();
-            GET_ROOT_DATABASE_REFERENCE().push().setValue(trip);
+            String id = GET_TRIP_REFERENCE().push().getKey();
+            GET_TRIP_REFERENCE().push().setValue(trip);
 
             return id;
         }

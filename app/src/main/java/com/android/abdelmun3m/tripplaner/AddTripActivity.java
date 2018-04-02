@@ -1,6 +1,8 @@
 package com.android.abdelmun3m.tripplaner;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,6 +37,7 @@ public class AddTripActivity extends Activity
     Place startPlace,endPlace;
     DatePicker datePicker;
     TimePicker timePicker;
+    Button btnDate ;
 
 
     private static final String TAG = AddTripActivity.class.getSimpleName();
@@ -49,6 +52,9 @@ public class AddTripActivity extends Activity
         datePicker = (DatePicker) findViewById(R.id.tripDatePicker);
         timePicker = findViewById(R.id.tripTimePicker);
         addButton = findViewById(R.id.AddButton);
+        btnDate = findViewById(R.id.btn_date);
+
+
         int day = datePicker.getDayOfMonth();
         int month = datePicker.getMonth() + 1;
         int year = datePicker.getYear();
@@ -100,9 +106,9 @@ public class AddTripActivity extends Activity
             @Override
             public void onClick(View view) {
                     tripsObj = new trips(
-                            tripName.getText().toString()
-                            ,startPlace.getName().toString(),
-                            endPlace.getName().toString(),
+                            tripName.getText().toString(),
+                            startPlace,
+                            endPlace,
                             datePicker.getDayOfMonth()+
                                     "/"+datePicker.getMonth()+"/"
                                     +datePicker.getYear(),
@@ -111,19 +117,18 @@ public class AddTripActivity extends Activity
                             tripNotes.getText().toString(),
                             false);
 
-
                 String id = DBSingleTon.addTrip(tripsObj);
                 if(id != null){
                     Toast.makeText(AddTripActivity.this, "Trip Added", Toast.LENGTH_SHORT).show();
                     //TODO GO TO Main Activity
+                    Intent i = new Intent(AddTripActivity.this,MainActivity.class);
+                    AddTripActivity.this.startActivity(i);
                 }
             }
 
 
         });
-
-
-
+        
     }
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
