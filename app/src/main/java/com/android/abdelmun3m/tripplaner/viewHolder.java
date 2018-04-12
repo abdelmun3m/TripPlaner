@@ -51,8 +51,8 @@ public class viewHolder {
     }
 
     public DatePicker getTripDate() {
-        if (tripDate ==null)
-            tripDate= (DatePicker) convertView.findViewById(R.id.tripDatePicker);
+        //if (tripDate ==null)
+          //  tripDate= (DatePicker) convertView.findViewById(R.id.tripDatePicker);
         return tripDate;
     }
 
@@ -63,14 +63,14 @@ public class viewHolder {
     }
 
     public TextView getRoundTrip() {
-        if (roundTrip ==null)
-            roundTrip = (TextView)convertView.findViewById(R.id.TowDirection);
+       // if (roundTrip ==null)
+           // roundTrip = (TextView)convertView.findViewById(R.id.TowDirection);
         return roundTrip;
     }
 
     public TextView getOneDirTrip() {
-        if (oneDirTrip ==null)
-            oneDirTrip = (TextView)convertView.findViewById(R.id.OneDirection);
+        //if (oneDirTrip ==null)
+          //  oneDirTrip = (TextView)convertView.findViewById(R.id.OneDirection);
         return oneDirTrip;
     }
 

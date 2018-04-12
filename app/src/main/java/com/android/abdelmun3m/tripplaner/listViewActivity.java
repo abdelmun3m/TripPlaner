@@ -111,7 +111,7 @@ public class listViewActivity extends AppCompatActivity {
             //myviewHolder.getStartPlace().setPlace(myTrips[position].getStartPlace());
             //myviewHolder.getEndPlace().setPlace(myTrips[position].getEndPlace());
            // myviewHolder.getTripDate().setDate(myTrips[position].getTripDate());
-            myviewHolder.getTripNotes().setText(myTrips[position].getTripNotes());
+           // myviewHolder.getTripNotes().setText(myTrips[position].getTripNotes());
             //myviewHolder.getOneDirTrip().setText(myTrips[position].get);
           // myviewHolder.getRoundTrip().setText(myTrips[position].getRoundTrip());
             return singleRow;
