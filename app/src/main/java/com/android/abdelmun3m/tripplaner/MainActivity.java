@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,7 +30,7 @@ public class MainActivity extends Activity {
     CardsAdapter cardsAdapter;
 
     Button startTripBtn;
-
+    ImageView addTripIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +40,20 @@ public class MainActivity extends Activity {
             finish();
         }
 
+
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         cardsAdapter = new CardsAdapter(MainActivity.this,cardsList);
         recyclerView.setAdapter(cardsAdapter);
+        addTripIcon = findViewById(R.id.addBtn);
+        addTripIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this , AddTripActivity.class));
+            }
+        });
 
     }
 

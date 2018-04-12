@@ -8,104 +8,110 @@
     tools:context="com.android.abdelmun3m.tripplaner.LoginActivty">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@drawable/r">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ede7f6">
+            android:layout_height="match_parent"
+           >
+
 
             <!--  Header Starts-->
-            <LinearLayout android:id="@+id/header"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@layout/headergradient"
-                android:paddingTop="5dip"
-                android:paddingBottom="5dip">
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="70dp"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip">
                 <!-- Logo Start-->
-                <ImageView android:src="@drawable/one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dip"/>
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/av"
+
+                    />
                 <!-- Logo Ends -->
             </LinearLayout>
             <!--  Header Ends -->
 
             <!-- Footer Start -->
-            <LinearLayout android:id="@+id/footer"
+            <LinearLayout
+                android:id="@+id/footer"
                 android:layout_width="match_parent"
                 android:layout_height="90dip"
 
-                android:orientation="horizontal"
-                android:layout_alignParentBottom="true">
-            </LinearLayout>
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"></LinearLayout>
             <!-- Footer Ends -->
 
             <!-- Login Form -->
             <LinearLayout
-                android:layout_centerHorizontal="true"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dip"
-                android:layout_below="@id/header">
+                android:layout_below="@id/header"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical"
+                android:padding="10dip">
 
                 <!--  Email Label -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView"
-                    android:textColor="#372c24"
-                    android:textAllCaps="?android:attr/textAppearanceLarge"
-                    android:layout_gravity="center_horizontal"
-                    android:text="User Login"/>
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/textView"-->
+                <!--android:textColor="#372c24"-->
+                <!--android:textAllCaps="?android:attr/textAppearanceLarge"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:text="User Login"/>-->
 
                 <EditText
-                    android:layout_margin="15dp"
-                    android:inputType="textEmailAddress"
-                    android:hint="Enter Your Email"
                     android:id="@+id/editTextEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dip"
+                    android:layout_margin="15dp"
                     android:layout_marginBottom="20dip"
-                    android:singleLine="true"/>
+                    android:layout_marginTop="5dip"
+                    android:hint="Enter Your Email"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true" />
 
                 <!--  Password Label -->
                 <EditText
-                    android:layout_margin="15dp"
-                    android:inputType="textPassword"
-                    android:hint="Enter Your Password"
                     android:id="@+id/editTextPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:hint="Enter Your Password"
+                    android:inputType="textPassword"
+                    android:textColor="#80adde"/>
 
                 <Button
                     android:id="@+id/buttonSignIn"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="sinup"
-                    android:textColor="#ce93d8"
-                    android:textStyle="italic"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_width="250dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:textSize="20sp"
-                    android:background="@drawable/buttonshape"
-                    android:shadowColor="#A8A8A8"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn"
+                    android:textStyle="italic"
+
                     />
 
                 <TextView
-                    android:textAlignment="center"
-                    android:text="Not Have An Account ?Sign Up Here"
                     android:id="@+id/textViewSignUp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Not Have An Account?Sign Up Here"
+                    android:textAlignment="center"
+                    android:layout_marginLeft="60dp"
+                    android:textSize="15dp"
+                    android:textColor="#80adde"/>
 
             </LinearLayout>
             <!-- Login Form Ends -->
