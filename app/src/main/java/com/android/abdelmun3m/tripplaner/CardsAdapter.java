@@ -35,7 +35,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
     }
 
     @Override
-    public void onBindViewHolder(CardsViewHolder holder, int position) {
+    public void onBindViewHolder(CardsViewHolder holder, final int position) {
 
         final trips card = CardsList.get(position);
         holder.tripName.setText(card.getTripName());
@@ -44,7 +44,6 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
         holder.tripDateTime.setText(card.getTripDate());
         holder.tripStatus.setText(card.getTripStatus());
         holder.tripDirStatus.setText(card.getRootStatus());
-
 
         //Start trip Button
         holder.startTripBtn.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +69,28 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
             }
         });
 
+        //edit card
+       holder.editCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(myCtx , AddTripActivity.class);
+                myCtx.startActivity(intent);
+
+            }
+        });
+
+
+       //delete card
+        holder.deletCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CardsList.remove(position);
+                CardsAdapter.this.notifyDataSetChanged();
+            }
+        });
+
+
     }
 
     @Override
@@ -83,7 +104,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
         TextView tripName , tripstrPoint , tripendPoint , tripDateTime , tripStatus , tripDirStatus;
         //ImageView deleteCard;
         public Button startTripBtn;
-
+        public ImageView startImage , deletCard , editCard;
         public CardsViewHolder(View itemView) {
             super(itemView);
             tripName = itemView.findViewById(R.id.tripName);
@@ -95,7 +116,14 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
 
             startTripBtn = itemView.findViewById(R.id.launchTrip);
 
+            editCard = itemView.findViewById(R.id.editCard);
+
+            deletCard = itemView.findViewById(R.id.deletCard);
+
+
+
         }
+
     }
     @Override
     public CardsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

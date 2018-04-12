@@ -25,27 +25,23 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private DatabaseReference databaseReference;
     private EditText editTextName,editTextAddress;
     private Button buttonSaveInformation;
+    FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-
-
-        firebaseAuth =FirebaseAuth.getInstance();
-
-
-        if(firebaseAuth.getCurrentUser() == null){
+        if(DBSingleTon.GET_LOGGED_USER(this) == null){
             finish();
-            startActivity(new Intent(this,LoginActivty.class));
+        }else{
+
+             user=DBSingleTon.GET_LOGGED_USER(this);
         }
-
+        setContentView(R.layout.activity_profile);
         databaseReference= FirebaseDatabase.getInstance().getReference();
-
         editTextName=(EditText) findViewById(R.id.editTextName);
         editTextAddress=(EditText) findViewById(R.id.editTextAddress);
         buttonSaveInformation=(Button) findViewById(R.id.buttonSaveInformation);
 
-        FirebaseUser user=firebaseAuth.getCurrentUser();
+
 
         //Intialization Views
         textViewUserEmail= (TextView) findViewById(R.id.textViewUserEmail);
@@ -62,14 +58,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         String name=editTextName.getText().toString().trim();
         String address=editTextAddress.getText().toString().trim();
-
         saveUserInformation saveInfo=new saveUserInformation(name , address);
-
-        FirebaseUser  user= firebaseAuth.getCurrentUser();
-
-        databaseReference.child(user.getUid()).setValue(saveInfo);
-
+        //FirebaseUser  user= firebaseAuth.getCurrentUser();
+        //databaseReference.child(user.getUid()).setValue(saveInfo);
+        DBSingleTon.ADD_USER_INFO(saveInfo);
         Toast.makeText(this,"Information Save Successfully",Toast.LENGTH_LONG).show();
+
+        Intent i = new Intent(ProfileActivity.this , AddTripActivity.class);
+        startActivity(i);
 
     }
 

@@ -2,6 +2,7 @@ package com.android.abdelmun3m.tripplaner;
 
 import android.net.Uri;
 import android.text.format.Time;
+import android.util.ArrayMap;
 import android.util.Log;
 
 import com.google.android.gms.location.places.Place;
@@ -9,6 +10,7 @@ import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -24,17 +26,34 @@ public class trips {
     CustomPlace endPlace;
     String tripDate;
     String tripTime;
-    String tripNotes;
+    ArrayList<String> tripNotes;
     Boolean roundTrip;
     String tripStatus = "upcoming";
+    public static final int TRIP_STATUS_UPCOMING = 0;
+    public static final int TRIP_STATUS_PAST = 1;
+    public static final int TRIP_STATUS_DELETED = 2;
+    public static final int TRIP_STATUS_DONE = 3;
     private String rootStatus = "root";
+    int status  = TRIP_STATUS_UPCOMING ;//0 upcoming 1 past 2 deleted
+
+
+
 
     public trips(){
 
     }
 
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     public trips(String tripName, Place startPlace, Place endPlace,
-                 String tripDate, String tripTime , String tripNotes, Boolean roundTrip){
+                 String tripDate, String tripTime , ArrayList tripNotes, Boolean roundTrip){
         this.tripName = tripName;
         this.startPlace = new CustomPlace(
                 startPlace.getId(),
@@ -87,11 +106,11 @@ public class trips {
         this.tripDate = tripDate;
     }
 
-    public String getTripNotes() {
+    public ArrayList getTripNotes() {
         return tripNotes;
     }
 
-    public void setTripNotes(String tripNotes) {
+    public void setTripNotes(ArrayList tripNotes) {
         this.tripNotes = tripNotes;
     }
 

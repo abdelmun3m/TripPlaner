@@ -33,4 +33,12 @@
     <string name="str_direction">direction</string>
     <string name="str_StartTrip">Start Trip</string>
     <string name="title_activity_login">Login</string>
+    <string name="from">From</string>
+    <string name="to">TO</string>
+
+    <string-array name="directions">
+        <item>One Direction</item>
+        <item>Two Directions</item>
+    </string-array>
+
 </resources>

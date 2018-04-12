@@ -4,101 +4,120 @@
 
 
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/cardview_light_background"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginTop="30dp"
         app:cardBackgroundColor="@color/colorAccent"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp">
+        app:cardCornerRadius="50dp"
+        app:cardElevation="10dp"
+
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tripLabelName"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="6dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:background="#b6060606"
                 android:shadowColor="@color/colorPrimary"
                 android:text="@string/str_tripName"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#ffffff"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/tripName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="100dp"
+                android:layout_marginLeft="150dp"
+
+                android:layout_marginTop="50dp"
                 android:shadowColor="@color/colorPrimary"
                 android:text="@string/str_tripName"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#a9eaed"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
 
             <TextView
                 android:id="@+id/tripstrLabelPoint"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripName"
                 android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
+                android:background="#b6060606"
                 android:text="@string/str_strpoint"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#ffffff"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/tripstrPoint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripName"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="100dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/str_strpoint"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#a9eaed"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
 
             <TextView
                 android:id="@+id/tripLabelendPoint"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripstrPoint"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
+                android:background="#b6060606"
                 android:text="@string/str_endpoint"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#ffffff"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/tripendPoint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripstrPoint"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="100dp"
+                android:layout_marginLeft="150dp"
+
                 android:layout_marginTop="5dp"
                 android:text="@string/str_endpoint"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#a9eaed"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
 
             <TextView
                 android:id="@+id/tripLabelDateTime"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripendPoint"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
+                android:background="#b6060606"
                 android:text="@string/str_dateTime"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#ffffff"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
 
             <TextView
@@ -106,23 +125,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripendPoint"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="100dp"
+                android:layout_marginLeft="150dp"
+
                 android:layout_marginTop="5dp"
                 android:text="@string/str_dateTime"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#a9eaed"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
 
             <TextView
                 android:id="@+id/tripLabelStatus"
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripDateTime"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
+                android:background="#b6060606"
                 android:text="@string/str_tripstatus"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#ffffff"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
 
             <TextView
@@ -130,48 +154,78 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripDateTime"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="100dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/str_tripstatus"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#a9eaed"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
 
             <TextView
                 android:id="@+id/tripLabelDirStatus"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripStatus"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
+                android:background="#b6060606"
                 android:text="@string/str_direction"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#ffffff"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/tripDirStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tripStatus"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="100dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/str_direction"
-                android:textColorLink="@color/colorPrimary" />
+                android:textColor="#a9eaed"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="25dp" />
 
-            <Button
-                android:id="@+id/launchTrip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tripDirStatus"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/str_StartTrip" />
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:weightSum="6"
+               android:orientation="horizontal"
+               android:layout_marginTop="400dp">
 
 
-        </RelativeLayout>
+               <ImageView
+                   android:id="@+id/editCard"
+                   android:layout_width="0dp"
+                   android:layout_weight="2"
+                   android:layout_height="60dp"
+                   android:src="@drawable/pencil"
+                   />
+
+
+               <Button
+                   android:id="@+id/launchTrip"
+                   android:layout_width="0dp"
+                   android:layout_weight="2"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/tripDirStatus"
+                   android:layout_centerHorizontal="true"
+                   android:background="@drawable/buttonshape"
+                   android:text="Start Trip"/>
+                   />
+
+               <ImageView
+                   android:id="@+id/deletCard"
+                   android:layout_width="0dp"
+                   android:layout_weight="2"
+                   android:layout_height="50dp"
+                   android:src="@drawable/delete"/>
+
+
+           </LinearLayout>
+                    </RelativeLayout>
 
     </android.support.v7.widget.CardView>
 

@@ -7,73 +7,71 @@
     tools:context="com.android.abdelmun3m.tripplaner.ProfileActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textViewUserEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textViewUserEmail"
-            android:textAllCaps="?android:attr/textAppearanceLarge"
             android:layout_gravity="center_horizontal"
             android:text="Large Text"
-            android:textSize="25sp"
-            android:textColor="#ce93d8"/>
+            android:textAllCaps="?android:attr/textAppearanceLarge"
+            android:textColor="#ce93d8"
+            android:textSize="25sp" />
 
         <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="Enter Your Full Name"
-            android:id="@+id/editTextName"
-            android:textColorHint="#ce93d8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textColorHint="#93cdd8" />
 
         <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="Enter Your Address"
-            android:id="@+id/editTextAddress"
-            android:textColorHint="#ce93d8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textColorHint="#93cdd8" />
 
         <Button
             android:id="@+id/buttonSaveInformation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save Information"
-            android:textColor="#ce93d8"
-            android:textStyle="italic"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginBottom="30dp"
             android:layout_gravity="center"
-            android:textSize="20sp"
-            android:background="@drawable/buttonshape"
-            android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="5"/>
-
-        <Button
-            android:id="@+id/buttonLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textSize="20sp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/buttonshape"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:textColor="#ce93d8"
-            android:textStyle="italic"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginBottom="30dp"
+            android:text="Save Information"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/buttonLogout"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/logout"
+            android:shadowColor="#A8A8A8"
+            android:shadowRadius="5"
+            android:textColor="#ce93d8"
+            android:textSize="20sp"
+            android:textStyle="italic"
 
             />
 
