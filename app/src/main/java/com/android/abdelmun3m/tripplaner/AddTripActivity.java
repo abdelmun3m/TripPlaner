@@ -39,7 +39,7 @@ public class AddTripActivity extends Activity implements View.OnClickListener, A
     Button addButton;
     EditText tripNotes;
     Boolean roundTrip;
-    Place startPlace,endPlace;
+    CustomPlace startPlace,endPlace;
     ImageView btnDate ;
     TextView tvDate;
     TextView tvTime;
@@ -47,25 +47,31 @@ public class AddTripActivity extends Activity implements View.OnClickListener, A
     TimePicker time;
     DatePicker date;
     Spinner spinnerDirection;
-    ArrayList<String> notes;
     EditText etAddNewNote;
     ImageView btnAddNote;
     RecyclerView lvNote;
     NoteAdapter notesAdapter;
     boolean oneDirection;
+    boolean edit;
+    trips editTrip;
 
     private static final String TAG = AddTripActivity.class.getSimpleName();
+    public static final String EDIT_TRIP_KEY ="edit";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if(DBSingleTon.GET_LOGGED_USER(this) == null){
-//            finish();
-//        }
+        if(DBSingleTon.GET_LOGGED_USER(this) == null){
+            finish();
+        }
         setContentView(R.layout.activity_add_trip);
 
+
+        Intent intent  = getIntent();
+         edit= false;
+
+
         tripName = findViewById(R.id.NameEditText);
-        //tripNotes = findViewById(R.id.CommentEditText);
         addButton = findViewById(R.id.AddButton);
         btnDate =  findViewById(R.id.ibtn_date);
         tvDate = findViewById(R.id.tv_date);
@@ -80,8 +86,11 @@ public class AddTripActivity extends Activity implements View.OnClickListener, A
         btnTime.setOnClickListener(this);
         addButton.setOnClickListener(this);
         spinnerDirection.setOnItemSelectedListener(this);
-        notes = new ArrayList();
+        startPlaceFragment = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_start);
 
+        endPlaceFragment = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_end);
 
         notesAdapter = new NoteAdapter(this);
         RecyclerView.LayoutManager manger = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
@@ -89,18 +98,32 @@ public class AddTripActivity extends Activity implements View.OnClickListener, A
         lvNote.setHasFixedSize(true);
         lvNote.setAdapter(notesAdapter);
         //Creating AutoComplete Location
-         startPlaceFragment = (PlaceAutocompleteFragment)
-                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_start);
 
-         endPlaceFragment = (PlaceAutocompleteFragment)
-                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_end);
+
+        if(intent.hasExtra(EDIT_TRIP_KEY)){
+            editTrip= intent.getParcelableExtra(EDIT_TRIP_KEY);
+            edit = true;
+            tripName.setText(editTrip.getTripName());
+            addButton.setText("Save");
+            tvDate.setText(editTrip.getTripDate());
+            tvTime.setText(editTrip.getTripTime());
+            spinnerDirection.setSelection(editTrip.getRoundTrip()? 1:0);
+            notesAdapter.setNotes(editTrip.tripNotes);;
+            startPlace = editTrip.getStartPlace();
+            startPlaceFragment.setText(startPlace.getName());
+            endPlace = editTrip.getEndPlace();
+            endPlaceFragment.setText(endPlace.getName());
+        }
+
+
+
 
         startPlaceFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 String placeName = place.getName().toString();
-                startPlace = place;
+                startPlace = new CustomPlace(place.getId(),place.getLatLng().latitude,place.getLatLng().longitude,place.getName().toString());
                 Toast.makeText(AddTripActivity.this, "" + placeName, Toast.LENGTH_SHORT).show();
             }
 
@@ -116,7 +139,7 @@ public class AddTripActivity extends Activity implements View.OnClickListener, A
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 String placeName = place.getName().toString();
-                endPlace = place;
+                endPlace =  new CustomPlace(place.getId(),place.getLatLng().latitude,place.getLatLng().longitude,place.getName().toString());
                 Toast.makeText(AddTripActivity.this, "" + placeName, Toast.LENGTH_SHORT).show();
             }
 
@@ -141,6 +164,7 @@ public class AddTripActivity extends Activity implements View.OnClickListener, A
             default:break;
         }
     }
+
 
     private void addNewNote() {
 
@@ -193,18 +217,15 @@ public class AddTripActivity extends Activity implements View.OnClickListener, A
 
     private void addTrip(){
 
-        String errors;
         if(tripName.getText().toString().equals("")){
-
             Toast.makeText(this, "Please Add Trip Name", Toast.LENGTH_LONG).show();
         }else if(startPlace == null){
             Toast.makeText(this, "Please Add Start Place", Toast.LENGTH_LONG).show();
         }else if(endPlace == null){
             Toast.makeText(this, "Please Add End Place", Toast.LENGTH_LONG).show();
-        }else if(date == null){
+        }else if(tvDate.getText().toString().trim().equals("")){
             Toast.makeText(this, "Please Add Trip Date", Toast.LENGTH_LONG).show();
-
-        }else if(time == null){
+        }else if(tvTime.getText().toString().trim().equals("")){
             Toast.makeText(this, "Please Add Trip Time", Toast.LENGTH_LONG).show();
         }else{
 
@@ -212,20 +233,23 @@ public class AddTripActivity extends Activity implements View.OnClickListener, A
                     tripName.getText().toString(),
                     startPlace,
                     endPlace,
-                    date.getDayOfMonth()+
-                            "/"+date.getMonth()+"/"
-                            +date.getYear(),
+                    tvDate.getText().toString(),
                     // timePicker.getHour()+":"+timePicker.getMinute(),
-                    null,
-                    notes,
+                    tvTime.getText().toString(),
+                    notesAdapter.getNotes(),
                     false);
 
-            String id = DBSingleTon.ADD_TRIP(tripsObj);
-            if(id != null){
-                Toast.makeText(AddTripActivity.this, "Trip Added", Toast.LENGTH_SHORT).show();
-                //TODO GO TO Main Activity
-//            Intent i = new Intent(AddTripActivity.this,MainActivity.class);
-//            AddTripActivity.this.startActivity(i);
+            if(!edit){
+
+                String id = DBSingleTon.ADD_TRIP(tripsObj);
+                if(id != null){
+                    Toast.makeText(AddTripActivity.this, "Trip Added", Toast.LENGTH_SHORT).show();
+                    //TODO GO TO Main Activity
+                    startActivity(new Intent(AddTripActivity.this,MainActivity.class));
+                }
+            }else{
+                DBSingleTon.GET_TRIP_REFERENCE().child(editTrip.id).setValue(tripsObj);
+                Toast.makeText(this, "updated", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(AddTripActivity.this,MainActivity.class));
             }
 

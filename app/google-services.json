@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "823370211425",
-    "firebase_url": "https://tripplaner-3c292.firebaseio.com",
-    "project_id": "tripplaner-3c292",
-    "storage_bucket": "tripplaner-3c292.appspot.com"
+    "project_number": "895709512486",
+    "firebase_url": "https://tripplanner-1055f.firebaseio.com",
+    "project_id": "tripplanner-1055f",
+    "storage_bucket": "tripplanner-1055f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:823370211425:android:4b2d36d5c863f01a",
+        "mobilesdk_app_id": "1:895709512486:android:4b2d36d5c863f01a",
         "android_client_info": {
           "package_name": "com.android.abdelmun3m.tripplaner"
         }
       },
       "oauth_client": [
         {
-          "client_id": "823370211425-g67k02337jn8lufn7tq5j6rmi1pardkg.apps.googleusercontent.com",
+          "client_id": "895709512486-7lvu7ppr16eltep1ie8atd9ds2i2ujtl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDLsllP050mKKCtEQ5Czy81MKcf_Zm7mTU"
+          "current_key": "AIzaSyCMBWXpLlcmEcgGd1U7iLX0KJlg78XsF4A"
         }
       ],
       "services": {

@@ -26,6 +26,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             this.context = context;
     }
 
+    public ArrayList<String> getNotes(){
+        return  this.notes;
+    }
+    public void setNotes(ArrayList<String> notes){
+        this.notes = notes;
+    }
     public void addNewNote(String note){
 
         if(notes == null){

@@ -1,6 +1,8 @@
 package com.android.abdelmun3m.tripplaner;
 
 import android.net.Uri;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.text.format.Time;
 import android.util.ArrayMap;
 import android.util.Log;
@@ -19,7 +21,7 @@ import java.util.Locale;
  * Created by Asmaa on 3/28/2018.
  */
 
-public class trips {
+public class trips implements Parcelable{
 
     String tripName;
     CustomPlace startPlace;
@@ -29,6 +31,7 @@ public class trips {
     ArrayList<String> tripNotes;
     Boolean roundTrip;
     String tripStatus = "upcoming";
+    transient String id;
     public static final int TRIP_STATUS_UPCOMING = 0;
     public static final int TRIP_STATUS_PAST = 1;
     public static final int TRIP_STATUS_DELETED = 2;
@@ -44,6 +47,34 @@ public class trips {
     }
 
 
+    protected trips(Parcel in) {
+        id= in.readString();
+        tripName = in.readString();
+        tripDate = in.readString();
+        tripTime = in.readString();
+        tripNotes = in.createStringArrayList();
+        byte tmpRoundTrip = in.readByte();
+        roundTrip = tmpRoundTrip == 0 ? null : tmpRoundTrip == 1;
+        tripStatus = in.readString();
+        rootStatus = in.readString();
+        status = in.readInt();
+        startPlace = in.readParcelable(CustomPlace.class.getClassLoader());
+        endPlace = in.readParcelable(CustomPlace.class.getClassLoader());
+
+    }
+
+    public static final Creator<trips> CREATOR = new Creator<trips>() {
+        @Override
+        public trips createFromParcel(Parcel in) {
+            return new trips(in);
+        }
+
+        @Override
+        public trips[] newArray(int size) {
+            return new trips[size];
+        }
+    };
+
     public int getStatus() {
         return status;
     }
@@ -52,21 +83,13 @@ public class trips {
         this.status = status;
     }
 
-    public trips(String tripName, Place startPlace, Place endPlace,
+    public trips(String tripName, CustomPlace startPlace, CustomPlace endPlace,
                  String tripDate, String tripTime , ArrayList tripNotes, Boolean roundTrip){
         this.tripName = tripName;
-        this.startPlace = new CustomPlace(
-                startPlace.getId(),
-                startPlace.getLatLng().latitude,
-                startPlace.getLatLng().longitude,
-                startPlace.getName().toString());
+        this.startPlace = startPlace;
 
-        this.endPlace = new CustomPlace(endPlace.getId(),
-                endPlace.getLatLng().latitude,
-                startPlace.getLatLng().longitude,
-                endPlace.getName().toString());
+        this.endPlace = endPlace;
 
-        Log.i("test1",startPlace.getLatLng().latitude+"");
 
         this.tripDate = tripDate;
         this.tripNotes = tripNotes;
@@ -106,11 +129,11 @@ public class trips {
         this.tripDate = tripDate;
     }
 
-    public ArrayList getTripNotes() {
+    public ArrayList<String> getTripNotes() {
         return tripNotes;
     }
 
-    public void setTripNotes(ArrayList tripNotes) {
+    public void setTripNotes(ArrayList<String> tripNotes) {
         this.tripNotes = tripNotes;
     }
 
@@ -150,5 +173,25 @@ public class trips {
 
     public void setRootStatus(String rootStatus) {
         this.rootStatus = rootStatus;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(id);
+        parcel.writeString(tripName);
+        parcel.writeString(tripDate);
+        parcel.writeString(tripTime);
+        parcel.writeStringList(tripNotes);
+        parcel.writeByte((byte) (roundTrip == null ? 0 : roundTrip ? 1 : 2));
+        parcel.writeString(tripStatus);
+        parcel.writeString(rootStatus);
+        parcel.writeInt(status);
+        parcel.writeParcelable(startPlace,0);
+        parcel.writeParcelable(endPlace,0);
     }
 }
